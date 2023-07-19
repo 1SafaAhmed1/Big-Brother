@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Software Specification Requirement </title>
+        <link rel="stylesheet" href="CSS/ordered_list.css">
+        <link rel="stylesheet" href="CSS/table.css">
+    </head>
+
+
+    <body style="margin-right: 50px; margin-left: 50px; margin-top: 50px">
+        <hr style="height:5px; border-width:0; color:black; background-color:black">
+        <h1 style="text-align:right">Software Definition</h1>
+        <h1 style="text-align:right">Specifications</h1>
+        <h2 style="text-align:right">for</h2>
+        <h1 style="text-align:right">Big Brother</h1>
+        <h4 style="text-align:right">Version 0.0 approved</h4>
+        <h4 style="text-align:right">Prepared by Team Django Unchained</h4>
+        <h4 style="text-align:right">18 / 12 / 2020</h4>
+
+        <h1 style="padding-top: 250px">Table of Contents</h1>
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><h3>1. Introduction</h3></li>
+
+            <li><h3>Document Conventions</h3></li>
+            <li><h3>Description of Design Components</h3></li>
+            <li><h3>High-Level Component Design</h3></li>
+
+            <li><h3>Class Diagrams</h3>
+                <ol>
+                    <li>Detailed Class Diagrams</li>
+                    <li>Detailed Class Descriptions</li>
+                </ol>
+            </li>
+
+            <li><h3>Sequence Diagrams</h3></li>
+            <li><h3>Database Design</h3>
+                <ol>
+                    <li>ER Diagram</li>
+                    <li>Detailed Table Descriptions</li>
+                </ol>
+            </li>
+            <li><h3>Implementation Plan</h3></li>
+        </ol>
+
+        <ol style="padding-top: 250px">
+            <li><h3>Introduction</h3>
+                <p> 
+                    <ol>
+                        <li>Purpose
+                            <p>This document will define the design of the PDF monitoring system named “Big Brother”. It contains specific information about the expected classes and functions. The interaction between the classes to meet the desired requirements are outlined in detailed figures at the end of the document.
+                            </p>
+                        </li>
+                        <li>Scope
+                            <p>This Design Specification is to be used by Software Engineering and Software Quality Engineering as a definition of the design to be used to implement the PDF monitoring system.
+                            </p>
+                        </li>
+                        <li>Goals and Objectives
+                            <p>The main purpose of this PDF monitoring system is to help all students, especially kids of age 6 to 11. The goals of the system are:
+                                <ul>
+                                    <li>To let the teacher know if his/her students are actually studying regularly or not</li>
+                                    <li>To let the teacher know if his students are attentive or not. Since most of the time kids sit in front of screen but do other things like playing or eating. The system will detect it too.</li>
+                                    <li>To make the students attentive. Because, they’ll know that the system is monitoring them.</li>
+                                </ul>
+                            </p>
+                        </li>
+                    </ol>
+            </li>
+
+            <li><h3>Document Convention</h3>
+                <p> NA </p>
+            </li>
+
+            <li><h3>Description of Design Components</h3>
+                <ul>
+                    <li>Client Side
+                        <p>The client side of our design contains
+                            HTTPS requests from Android and Web-browsers. All
+                            requests are passed through a REST API Framework that
+                            fetches the required information and displays it through
+                            appropriate format.
+                        </p>
+                    </li>
+
+                    <li>Server Side
+                        <p>The server side of our design contains our Django
+                            backend server. The server is a MVC type architecture
+                            where the Controller handles any incoming request from the
+                            REST API Framework, sends and then recieves information from
+                            the Models, and displays those information through a View.
+                        </p>
+
+                    </li>
+
+                    <li>Third Party APIs
+                        <p>We are going to use third party APIs like Google Account
+                            to create user accounts, and OpenAI to track webcam contents.
+                            They will be called by Controller in our server.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li><h3>High-Level Component Design</h3>
+            	<br>
+                <img src="High-Level Diagramm.jpg" width="50%" height="50%">
+
+            </li>
+
+            <li><h3>Class Diagrams</h3>
+                <ol>
+                    <li>Detailed Class Diagram
+                        <br>
+                        <img src="Class Diagrams.jpg" alt="" width="70%" height="70%">
+                    </li>
+                    <li>Detailed Class Descriptions
+                        <ol>
+                            <li>Class : Classroom
+                                <ul>
+                                    <li>Purpose: To store data about classroom objects</li>
+                                    <li>Public Methods
+                                        <ul>
+                                            <li>Name: getStudentList()</li>
+                                            <li>Parameters: returns List</li>
+                                            <li>Parameters: returns List</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li><h3>Sequence Diagrams</h3>
+                <ol>
+                    <li>Use Case : Adding Students
+                        <br>
+                        <img src="Sequence Diagram for adding student.jpg" width="50%" height="50%">
+                    </li>
+                    <li>Use Case : Removing Students
+                        <br>
+                        <img src="Sequence Diagram for Removing Student.jpg" width="50%" height="50%">
+                    </li>
+                    <li>Use Case : Making Announcements/Comments
+                        <br>
+                        <img src="Sequence Diagram for Making Comment.jpg" width="50%" height="50%">
+                    </li>
+                    <li>Use Case : Uploading Content
+                        <br>
+                        <img src="Sequence Diagram For Uploading Content.jpg" width="50%" height="50%">
+                    </li>
+                    <li>Use Case : Viewing Content
+                        <br>
+                        <img src="Sequence Diagram for viewing content.jpg" width="50%" height="50%">
+                    </li>
+                    <li>Use Case : Generating Report
+                        <br>
+                        <img src="Sequence Diagram For Pdf Report.jpg" width="50%" height="50%">
+                    </li>
+                </ol>
+            </li>
+
+            <li><h3>Database Design</h3>
+                <ol>
+                    <li>ER Diagram
+                        <br>
+                        <img src="erd.png" alt="" height="50%" width="50%">
+                    </li>
+                    <li>Detailed Table Description</li>
+                </ol>
+            </li>
+
+            <li><h3>Implementation Plan</h3>
+                <p>We plan to implement our project in five steps.
+                    <ul>
+                        <li>Overall Design of System
+                            <p>This part will consist of the design of our system 
+                                which includes Class Diagrams, Sequence Diagrams, 
+                                ER diagrams and any relevant design protocols. As 
+                                we go through our project we will encounter many 
+                                difficulties and may need to update our designs 
+                                as required. We will be incrementally updating and 
+                                modifying our designs and design patterns after our 
+                                initial design submissions.
+                            </p>
+                        </li>
+
+                        <li>Backend
+                            <p>The next step after our design process will be to implement 
+                                the backend with plenty of unit tests. 
+                                This part will consist of creating Model classes 
+                                which will be a challenge. We aim to have at least a basic working 
+                                backend before we move onto the next phase.
+                            </p>
+                        </li>
+
+                        <li>Front End
+                            <p>We will proceed on to create a front end for our user 
+                                using frameworks like Bootstrap. We will link the backend 
+                                with our front end at this point to present a working iteration 
+                                of our system.
+                            </p>
+                        </li>
+
+                        <li>Linking with API
+                            <p>This part too will be a challenge. We will aim to create a 
+                                REST API which we will link with our website and Android app.
+                            </p>
+                        </li>
+
+                        <li>Further Tests and Improvements
+                            <p>During this phase we plan to increase coverage of 
+                                our unit tests. Moreover we aim to continuosly improve our 
+                                system.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+        </ol>

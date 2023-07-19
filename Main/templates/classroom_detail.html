@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="post-entry">
+        <h2>{{ object.name }}</h2>
+        <h3> {{ object.code }}</h3>
+    </div>
+<<<<<<< HEAD
+</div>
+
+<div>
+    <td><a class="btn btn-primary" href="comment/new/">Add Comment</a></td>
+    <td><a class="btn btn-primary" href="#">View PDF List</a></td>
+    <td><a class="btn btn-primary" href="studentadvise/">Add Student</a></td>
+</div>
+
+<div class="container">
+=======
+
+    <br>
+        <a class="btn btn-primary" href="comment/new/">Add Comment</a></td>
+    </br>
+
+>>>>>>> origin/comment_add
+    <br class="shadow" style="margin-top: 40px;margin-left: 320px;margin-right: 20px">
+    {% for comment in comments %}
+        <comment class="card" style="width: 20rem;">
+            <div class="card-body">
+            <div class="comment-metadata">
+                <a class="comment-content">{{ comment.comment_text }}</a>
+            </div>
+                <a class="mr-2">{{ comment.commentor }}</a>
+                <small class="text-muted">{{ comment.pub_date }}</small>
+            </div>
+        </comment>
+    <br>
+    {% endfor %}
+<<<<<<< HEAD
+=======
+    <br>
+    <div>
+        <td><a class="btn btn-primary" href="pdflist/">View PDF List</a></td>
+        <td><a class="btn btn-primary" href="studentadvise/">Advise students</a></td>
+    </div>
+    
+>>>>>>> origin/comment_add
+</div>
+{% endblock content %}

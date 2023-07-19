@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% load bootstrap %}
+
+
+{% block title %}Student Advising{% endblock title %}
+
+{% block content %}
+
+<br class="container">
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+
+            <form method="GET">
+                {{ filter.form|bootstrap }}
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+
+        </div>
+    </div>
+    
+</div>
+<br>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Username</th>
+                    <th>Firstname</th>
+					<th>Lastname</th>
+					<th>        </th>
+                </tr>
+
+                {% for profile in filter.qs %}
+
+                <tr>
+                    <td>{{profile.username}}</td>
+                    <td>{{profile.first_name}}</td>
+					<td>{{profile.last_name}}</td>
+					<td>
+                        <a class="btn btn-primary" href="/classroom/{{classroom}}/studentadvise/{{profile.username}}">ADD</a>
+				    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <br>
+            <div>
+                <a class="btn btn-primary" href="/classroom/{{classroom}}">DONE</a>
+            </div>
+            </br>
+        </div>
+    </div>
+</div>
+{% endblock content %}

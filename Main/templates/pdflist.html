@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="post-entry">
+        <h3>PDF List</h3>
+    </div>
+
+    <div>
+        <td><a class="btn btn-primary" href="new/">Upload PDF</a>
+    </div>
+    
+    <br class="shadow" style="margin-top: 40px;margin-left: 320px;margin-right: 20px">
+    {% for pdf in pdfs %}
+        <comment class="card" style="width: 20rem;">
+            <div class="card-body">
+            <div class="pdf-metadata">
+                <a href="/{{pdf.pdflink.url}}/" target="_blank" class="pdf-content">{{ pdf.title }}</a>
+            </div>
+                <a class="mr-2">{{ pdf.teacher }}</a>
+                <small class="text-muted">{{ pdf.pub_date }}</small>
+            </div>
+        </comment>
+    <br>
+    {% endfor %}
+    <br>
+
+</div>
+{% endblock content %}

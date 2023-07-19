@@ -1,0 +1,29 @@
+Steps to create a branch, work on branch, commit, push branch, ask for pull
+request on BitBucket, and finally delete branch.
+
+// To create branch
+1. git branch <branch name>
+
+For example, if you want to create a branch called
+introduction, you will use the command "git branch introduction" (quotes not included)
+
+// For you to work on that branch, you must move into it
+2. git checkout <branch name>
+
+For example, if you want to move into the 'introduction' branch, you will
+use the command "git checkout introduction" (quotes not included). Make sure 
+current branch is showing 'introduction' and not 'master'.
+
+// Any work you complete, you must commit on your local git.
+3.1 git add .  //(This will add all files to be commited, notice the dot)
+3.2 git commit -m "Appropriate Commit Message here"
+
+// After your work is done in the branch, commit it, and you are finally
+// ready to push it into online repository
+4. git push
+
+// After pushing, go to BitBucket, and open a pull request.
+5. Open a pull request on BitBucket, mention your branch and submit.
+
+I will review your branch code and decide if it ready to be merged or if it 
+requires more work.

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load socialaccount %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="alert alert-success">
+        <p style="text-align: center;">You are logged in</p>
+    </div>
+    {% endif %}
+    <div class="alert alert-info" role="alert" style="margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+        <p style="text-align: center;"><a href="{% url 'registration' %}">Don't have an account?</a></p>
+    </div>
+    <div class="card mx-auto" style="width: 20rem; margin-top: 20px; margin-bottom: 20px;">
+        <div class="card-body">
+            <h5>Log In</h5>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy}}
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card mx-auto" style="width: 20rem; margin-top: 20px; margin-bottom: 20px;">
+        <div class="g-signin2">
+            <a style="width: 100%;" class="btn btn-outline-dark" href="{% provider_login_url 'google' %}" role="button">
+                <img style="margin-bottom:3px; margin-right:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google sign-in" width="20px">
+                Login with Google </a>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="alert alert-success">
+        <p style="text-align: center;">You have successfully registered!</p>
+    </div>
+    <div class="card mx-auto" style="width: 20rem; margin-top: 20px; margin-bottom: 20px;">
+        <div class="card-body">
+            <a class="btn btn-primary" href="{% url 'account_login' %}">Go to login page</a>
+        </div>
+    </div>
+{% endblock content %}
